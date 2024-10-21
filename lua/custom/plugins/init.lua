@@ -3,7 +3,20 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  'windwp/nvim-autopairs',
-  event = 'InsertEnter',
-  config = true,
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = true,
+  },
+  {
+    'nvim-tree/nvim-tree.lua',
+    version = '*',
+    lazy = false,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require('nvim-tree').setup {}
+    end,
+  },
 }
